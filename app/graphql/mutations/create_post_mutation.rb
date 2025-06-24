@@ -22,11 +22,9 @@ module Mutations
       if (@post.save)
         {
           post: @post,
-          errors: []
-        } else {
-          post: nil,
-          errors: @post.errors.full_messages
         }
+      else
+        raise GraphQL::ExecutionError, @post.errors.full_messages.join(", ")
       end
     end
   end
