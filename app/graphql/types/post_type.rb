@@ -20,7 +20,7 @@ module Types
     field :author_id, Integer, null: false do
       description "The id of this post's author"
     end
-    field :author, Types::ReferencesType, null: true do
+    field :author, AuthorType, null: true do
       description "This post's author in object form"
     end
   end
