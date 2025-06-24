@@ -22,6 +22,8 @@ module Mutations
       if (@post.save)
         {
           post: @post,
+          # Do not put another fields because first line of this class only has one field -> post
+          # If you want to add more fields, you need to add them in the field declaration above
         }
       else
         raise GraphQL::ExecutionError, @post.errors.full_messages.join(", ")
